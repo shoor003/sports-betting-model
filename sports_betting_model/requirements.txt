@@ -1,0 +1,3 @@
+# This project only uses Python's standard library (csv, random, datetime).
+# Kept here for convention / future extensions (e.g. pandas, matplotlib
+# if you add plotting or real odds-file parsing).
