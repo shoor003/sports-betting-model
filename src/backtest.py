@@ -2,7 +2,7 @@
 Walk-forward backtest of an Elo-based tennis moneyline model.
 
 For every match, in chronological order:
-  1. Compute each player's win probability from CURRENT Elo (pre-match --
+  1. Compute each player's win probability from current Elo (pre-match,
      no lookahead).
   2. Simulate bookmaker odds for the match.
   3. If the model thinks a player's true win chance is meaningfully
@@ -12,8 +12,8 @@ For every match, in chronological order:
   5. Update Elo ratings with the result, then move to the next match.
 
 Two staking strategies are compared:
-  - Flat staking: bet a fixed % of INITIAL bankroll every time.
-  - Kelly staking: bet a fraction of CURRENT bankroll sized by edge size
+  - Flat staking: bet a fixed % of the initial bankroll every time.
+  - Kelly staking: bet a fraction of the current bankroll sized by edge
     (fractional Kelly to control variance).
 """
 

@@ -1,17 +1,16 @@
 """
 Simulates bookmaker moneyline odds for a match.
 
-Real historical odds (e.g. from tennis-data.co.uk or The Odds API) aren't
-freely fetchable from this environment, so this module generates
-realistic odds instead: it takes a "true" win probability, adds noise to
-represent the market's own imperfect model, then bakes in a bookmaker
-margin (vig). This is what your betting edge exists inside of -- a
-model that just reproduces the bookmaker's noise has zero edge; a model
-that's closer to the true probability than the market is where ROI
-comes from.
+Real historical odds (e.g. from tennis-data.co.uk or The Odds API) cost
+money to get, so this module fakes realistic odds instead: it takes a
+"true" win probability, adds noise to represent the market's own
+imperfect model, then bakes in a bookmaker margin (vig). That's the gap
+your betting edge lives in - a model that just reproduces the
+bookmaker's noise has zero edge, one that's closer to the true
+probability than the market is where ROI comes from.
 
 Swap this out for a real odds feed by replacing get_market_odds() with
-a lookup into your odds CSV/API response -- keep the same return shape.
+a lookup into your odds CSV/API response, keeping the same return shape.
 """
 
 import random
@@ -22,7 +21,7 @@ MARKET_NOISE_STD = 0.04  # how far the "market" probability drifts from truth
 
 def get_market_odds(true_prob_a: float):
     """
-    Given the TRUE probability that player A wins, simulate what a
+    Given the true probability that player A wins, simulate what a
     bookmaker's moneyline odds would look like for both players.
     Returns (decimal_odds_a, decimal_odds_b, implied_prob_a, implied_prob_b).
     """

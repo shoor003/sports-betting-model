@@ -10,10 +10,9 @@ Real data source (grab manually if you want live data instead of this
 synthetic set): https://github.com/JeffSackmann/tennis_atp
 Files are named atp_matches_<year>.csv.
 
-Match outcomes here are simulated from hidden "true skill" values per
-player using the same logistic win-probability formula as Elo, so the
-Elo model in elo.py has a real signal to recover -- this isn't just
-random noise.
+Match outcomes are simulated from hidden "true skill" values per player
+using the same logistic win-probability formula as Elo, so the Elo
+model in elo.py has a real signal to recover instead of just noise.
 """
 
 import csv

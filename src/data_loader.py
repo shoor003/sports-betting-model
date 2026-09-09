@@ -18,7 +18,7 @@ def load_matches(path: str):
                 "winner": row["winner_name"],
                 "loser": row["loser_name"],
             })
-    # Ensure chronological order -- critical for a walk-forward backtest,
-    # since we can only bet using information available before the match.
+    # Chronological order matters for a walk-forward backtest since we
+    # can only bet using information available before the match.
     matches.sort(key=lambda m: m["date"])
     return matches

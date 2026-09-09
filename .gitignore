@@ -5,8 +5,8 @@ __pycache__/
 venv/
 env/
 
-# Generated data
-data/*.csv
+# Auto-generated synthetic fallback data (real data in data/ IS committed)
+data/atp_matches_sample.csv
 
 # OS/editor
 .DS_Store
